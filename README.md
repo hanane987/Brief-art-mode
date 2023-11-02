@@ -1,0 +1,2 @@
+# Brief-art
+En tant que concepteur et développeur web chez FashionHub, ma mission consiste à traduire l'énergie et la passion de notre entreprise en un site web captivant. Je suis chargé de créer des maquettes et de les convertir en un site web attrayant, fonctionnel et entièrement responsive, mettant en avant nos dernières tendances en matière de vêtements et de services liés à la mode. Mon objectif est de fournir une expérience engageante aux passionnés de mode qui visitent notre site, tout en reflétant la passion et l'excitation que FashionHub incarne.

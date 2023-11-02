@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="Contact.css" />
+    <title>Fashion Hub</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">LOGO</a>
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="connection.html">Connection</a>
+      </nav>
+      <button style="margin-top: 10px; position: absolute">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="container-contact">
+      <div class="contact-box">
+        <div class="left-contact"></div>
+        <div class="right-contact">
+          <h2>Sign up</h2>
+          <div>
+            <p> Name :</p>
+          <input type="text" class="field" id="name" placeholder="Your First Name" />
+          </div>
+          
+          <div><p>Email :</p>
+            <input type="email" class="field" id="email" placeholder="Your Email" />
+          </div>
+          <div>
+            <p>Password :</p>
+          <input type="password" class="field" id="msg" placeholder="Your Password" />
+          </div>
+          
+          
+          <div class="button">
+            <a id="send" onclick="message()">Send</a>
+        </div>
+        <div class="message">
+            <div class="success" id="success">Your Message Successfully Sent!</div>
+            <div class="danger" id="danger">Feilds Can't be Empty!</div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Fashion Hub</h3>
+        <p>Follow us on social media :</p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+        
+      </div>
+
+      <div class="footer-bottom">
+        <p>copyright &copy;2020 Fashion Hub. designed by <span>Hanane</span></p>
+      </div>
+    </footer>
+
+
+    
+    <script>
+      function message(){
+    var Name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var msg = document.getElementById('msg');
+    const success = document.getElementById('success');
+    const danger = document.getElementById('danger');
+
+    if(Name.value === '' || email.value === '' || msg.value === ''){
+        danger.style.display = 'block';
+    }
+    else{
+        setTimeout(() => {
+            Name.value = '';
+            email.value = '';
+            msg.value = '';
+        }, 2000);
+
+        success.style.display = 'block';
+    }
+
+
+    setTimeout(() => {
+        danger.style.display = 'none';
+        success.style.display = 'none';
+    }, 4000);
+
+}
+      let btn = document.querySelector("button");
+      let nav = document.querySelector("nav");
+      btn.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
