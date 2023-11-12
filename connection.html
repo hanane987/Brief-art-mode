@@ -32,30 +32,40 @@
 
     <div class="container-contact">
       <div class="contact-box">
-        <div class="left-contact"></div>
-        <div class="right-contact">
-          <h2>Sign up</h2>
-          <div>
-            <p> Name :</p>
-          <input type="text" class="field" id="name" placeholder="Your First Name" />
-          </div>
-          
-          <div><p>Email :</p>
-            <input type="email" class="field" id="email" placeholder="Your Email" />
-          </div>
-          <div>
-            <p>Password :</p>
-          <input type="password" class="field" id="msg" placeholder="Your Password" />
-          </div>
-          
-          
-          <div class="button">
-            <a id="send" onclick="message()">Send</a>
+        <div class="left-contact">
+
         </div>
-        <div class="message">
-            <div class="success" id="success">Your Message Successfully Sent!</div>
-            <div class="danger" id="danger">Feilds Can't be Empty!</div>
-        </div>
+      	<div class="right-contact">
+          <form id="form" class="form">
+            <h2>Register</h2>
+    
+            <div class="field">
+    
+              <label for="username">Name</label>
+              <input type="text" id="name" placeholder="Enter username" />
+              <span style="color:red" id="name_error"></span>
+               
+            </div>
+    
+            <div class="field">
+    
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Enter email" />
+              <span style="color:red" id="email_error"></span>
+                         
+            </div>
+    
+            <div class="field">
+    
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter password" />
+              <span style="color:red" id="pass_error"></span>
+                         
+            </div>
+    
+            
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </div>
@@ -92,38 +102,91 @@
 
     
     <script>
-      function message(){
-    var Name = document.getElementById('name');
-    var email = document.getElementById('email');
-    var msg = document.getElementById('msg');
-    const success = document.getElementById('success');
-    const danger = document.getElementById('danger');
-
-    if(Name.value === '' || email.value === '' || msg.value === ''){
-        danger.style.display = 'block';
-    }
-    else{
-        setTimeout(() => {
-            Name.value = '';
-            email.value = '';
-            msg.value = '';
-        }, 2000);
-
-        success.style.display = 'block';
-    }
-
-
-    setTimeout(() => {
-        danger.style.display = 'none';
-        success.style.display = 'none';
-    }, 4000);
-
-}
-      let btn = document.querySelector("button");
-      let nav = document.querySelector("nav");
-      btn.addEventListener("click", function () {
-        nav.classList.toggle("active");
-      });
+   
+   const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const form = document.getElementById('form');
+    
+    const name_error = document.getElementById('name_error');
+    
+    const email_error = document.getElementById('email_error');
+    
+    const pass_error = document.getElementById('pass_error');
+    
+    form.addEventListener('submit',(e)=>
+    {  
+    
+    
+       var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    
+       if(name.value === '' || name.value == null)
+    
+       {
+          e.preventDefault();
+          name_error.innerHTML = "Name is required";
+       }
+    
+    
+       else
+       {
+          name_error.innerHTML = "";
+       }
+    
+       if(!email.value.match(email_check))
+       {
+          e.preventDefault();
+          email_error.innerHTML = "Valid Email is required";
+    
+       }
+    
+    
+       else
+       {
+          email_error.innerHTML = "";
+       }
+    
+    
+    
+    
+       if(password.value.length <= 5)
+    
+       {
+          e.preventDefault();
+          pass_error.innerHTML = "Password must be more than 6 characters";
+       }
+    
+       else
+       {
+         pass_error.innerHTML = "";
+       }
+    
+       if(password.value.length >= 20)
+    
+       {
+          e.preventDefault();
+          pass_error.innerHTML = "Password cannot be more than 20 characters";
+       }
+    
+       if(password.value === 'password')
+    
+       {
+          e.preventDefault();
+          pass_error.innerHTML = "Password cannot be password";
+       }
+    
+    
+    
+    
+    
+    
+    
+    })
+    let btn = document.querySelector("button");
+          let nav = document.querySelector("nav");
+          btn.addEventListener("click",function(){
+              nav.classList.toggle("active");
+          });
     </script>
   </body>
 </html>

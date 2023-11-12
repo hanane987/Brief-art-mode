@@ -20,6 +20,12 @@
         <a href="connection.html">Connection</a>
         
       </nav>
+      <button  style="  margin-top: 10px;
+      position: absolute;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
     <div>
@@ -96,6 +102,12 @@
           <p>copyright &copy;2020 Fashion Hub. designed by <span>Hanane</span></p>
       </div>
   </footer>
+  <script>
+    let btn = document.querySelector("button");
+      let nav = document.querySelector("nav");
+      btn.addEventListener("click",function(){
+          nav.classList.toggle("active");
+      });</script>
 </body>
 
 </html>
